@@ -1,7 +1,7 @@
 # react-dom-diff 分享
 
 - [内容大纲](http://git.lianjia.com/daipeng001/react-diff-sharing/blob/master/react-dom-dff.md)
-- [ppt]()
+- [ppt](http://git.lianjia.com/daipeng001/react-diff-sharing/blob/master/source/nodeppt%20react-dom-diff%20%E5%88%86%E4%BA%AB%20-%20By%20stanny.pdf)
 
 ## nodeppt
 
