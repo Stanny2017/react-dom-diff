@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <title>diff demo</title>
+    <!-- <script src="https://cdn.bootcss.com/react/16.2.0/umd/react.development.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+
+<body>
+
+    <div id="react-root"></div>
+    <img style="height: 700px" src="https://upload-images.jianshu.io/upload_images/1814354-4bf62e54553a32b7.png?imageMogr2/auto-orient/"
+        alt="">
+
+    <script type="text/babel">
+
+
+function createComponent(name) {
+
+class _MyNode extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log(name + ' is created.');
+    }
+
+    componentWillMount() {
+        console.log(name + ' will mount.');
+    }
+
+    componentDidMount() {
+        console.log(name + ' did mount.');
+    }
+
+    componentWillUnmount() {
+        console.log(name + ' will unmount.');
+    }
+
+    componentWillReceiveProps() {
+        console.log(name + ' will receive props')
+    }
+
+    shouldComponentUpdate() {
+        console.log(name + ' should update.');
+        return true;
+    }
+
+    componentWillUpdate() {
+        console.log(name + ' will update.')
+    }
+
+    componentDidUpdate() {
+        console.log(name + ' is updated.');
+    }
+
+    render() {
+        console.log(name + ' render!')
+        return (
+            <div className={'node ' + name} data-name={name}>
+                {this.props.children}
+            </div>
+        );
+    }
+}
+return _MyNode;
+}
+
+const Root = createComponent('Root');
+const A = createComponent('A')
+const B = createComponent('B')
+const C = createComponent('C')
+const D = createComponent('D')
+const E = createComponent('E')
+
+class Wrapper extends React.Component {
+constructor() {
+
+    super()
+    this.state = {
+        shouldShow: true
+    }
+    this.btnStyle={
+        height: '50px',
+        width:'200px',
+        background:'lightblue',
+        fontSize:'20px',
+        borderRadius: '5px'
+    }
+}
+
+handleClick() {
+    this.setState({
+        shouldShow: !this.state.shouldShow
+    })
+}
+
+render() {
+    const shouldShow = this.state.shouldShow;
+    return (
+        <Root>
+            {
+                shouldShow
+                    ?
+                    <A>
+                        <C></C>
+                        <D></D>
+                    </A>
+                    :
+                    <E></E>
+            }
+            <B><button style={this.btnStyle} onClick={this.handleClick.bind(this)}> change state</button></B>
+        </Root>
+        // <Root>
+        //     <A style={{ display: `${shouldShow ? 'block' : 'none'}` }}>
+        //         <C></C>
+        //         <D></D>
+        //     </A>
+        //     <E style={{ display: `${shouldShow ? 'block' : 'none'}` }} ></E>
+        //     <B><button style={this.btnStyle} onClick={this.handleClick.bind(this)}> change state</button></B>
+        // </Root>
+    )
+}
+}
+
+ReactDOM.render(<Wrapper />, document.getElementById('react-root'), function () { console.log('==============================='); });
+
+
+
+    </script>
+</body>
+
+</html>
