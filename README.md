@@ -9,6 +9,6 @@
 npm install -g nodeppt
 2. nodeppt start -d \<ppt-dir\> -p \<port-name\>
 
-### [useage](https://github.com/ksky521/nodePPT?spm=a2c4e.11153940.blogcont25742.3.768562c3yOgGQY)
+### [usage](https://github.com/ksky521/nodePPT?spm=a2c4e.11153940.blogcont25742.3.768562c3yOgGQY)
 
 - `demo.md` 为 nodeppt 的写法示例

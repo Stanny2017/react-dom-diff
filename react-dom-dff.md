@@ -65,7 +65,7 @@ var div = document.createElement('div')
 
 react 组件内部维护了一套虚拟 dom 的状态，状态变化的时候，产生新的虚拟 dom ，对比新旧两套虚拟，计算 diff，然后 只是把 diff 的部分用一种高效的方式更新到了真实 dom。
 
-![image](https://segmentfault.com/img/bVuHXW)
+![image](https://image-static.segmentfault.com/321/760/321760932-5707797107835_articlex)
 
 传统比较两颗树 diff 的算法的时间复杂度是 O(n^3)
 
