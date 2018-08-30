@@ -42,7 +42,7 @@ usemathjax: yes
 
 [slide]
 
-## 回顾·组件重新渲染的机制
+## 回顾·组件生命周期 & 何时重新渲染
 
 ![image](https://upload-images.jianshu.io/upload_images/1814354-4bf62e54553a32b7.png?imageMogr2/auto-orient/)
 
@@ -65,6 +65,7 @@ var div = document.createElement('div')
 
 [slide]
 
+# Virtual DOM 工作机制
 ----
 
 <img style="width:900px" src="https://image-static.segmentfault.com/321/760/321760932-5707797107835_articlex"/>
@@ -88,7 +89,7 @@ var div = document.createElement('div')
 # react-diff
 
 * 时间复杂度优化至 O(n)
-* shouldComponentUpdate() 返回 true  调用 diff
+* shouldComponentUpdate() 返回 true 后准备调用 diff
 
 [slide]
 
@@ -105,17 +106,19 @@ var div = document.createElement('div')
 - 类型相同的兄弟节点交换顺序
 ![image](https://note.youdao.com/yws/api/personal/file/WEBb118f19ee937ac176f7da158e49824f3?method=download&shareKey=eb616b50ce628abaddea5fe18014264c)
 
+
 [slide]
 
-- 节点跨层移动
+* 节点跨层移动 {:&.rollIn}
 ![image](https://note.youdao.com/yws/api/personal/file/WEBb9a0120bc0b6dd54d2dcfa23cdd4fda3?method=download&shareKey=3783aa27c0df6f89ceff5a92445fad03)
+* 节点跨层移动效率低？
 
 [slide]
 
 # react-diff 的两个假设
 
 <br>
-1. 组件 DOM 结构相对稳定，很少出现跨层移动的现象（UI 的特点）
+1. 组件 DOM 结构相对稳定，很少出现跨层移动的现象（UI 的特点） {:&.rollIn}
 <br>
 2. 同一层级的一组子节点有唯一 key 属性 
 
