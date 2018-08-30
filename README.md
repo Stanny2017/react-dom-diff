@@ -5,8 +5,7 @@
 
 ## nodeppt
 
-1. sudo 	
-npm install -g nodeppt
+1. sudo npm install -g nodeppt
 2. nodeppt start -d \<ppt-dir\> -p \<port-name\>
 3. 选择[远程控制] 手机扫码进行 ppt 切换
 
